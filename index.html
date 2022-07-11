@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <img src="/images/logo1.png" class="logo" alt="">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Specifications</a></li>
+                <li><a href="#">Connect</a></li>
+                <li><a href="#">Products</a></li>
+            </ul>
+            <img src="/images/moon.png" id="dark" class="darklight" alt="">
+        </div>
+        <div class="content ">
+            <div class="left-col">
+
+                <h1>The<br> Real<br> Sound</h1>
+                <img src="/images/musi.png" id="music_icon" class="musi" alt="">
+
+            </div>
+            <div class="right-col">
+                <div class="left-items"></div>
+                <p>Click here to listen</p>
+                <img src="/images/play.png" id="icon" alt="">
+            </div>
+        </div>
+    </div>
+    </div>
+    <audio src="/images/music.mp3" type="audio/mp3" id="mySong"></audio>
+
+    <script>
+        var mySong = document.getElementById("mySong");
+        var icon = document.getElementById("icon");
+        icon.onclick = function () {
+            if (mySong.paused) {
+                mySong.play()
+                icon.src = "images/pause.png";
+            }
+            else {
+                mySong.pause()
+                icon.src = "images/play.png";
+
+            }
+        }
+        var music_icon = document.getElementById("music-icon");
+        var dark = document.getElementById("dark");
+        dark.onclick = function () {
+            document.body.classList.toggle("dark-theme");
+
+            if (document.body.classList.contains("dark-theme")) {
+                dark.src = "images/sun.png";
+                // music_icon="images/logo.png";
+
+            }
+            else {
+                dark.src = "images/moon.png";
+                // music_icon="/images/musi.png";
+            }
+        }
+        
+
+        // var music_icon = document.getElementById("music-icon");
+    </script>
+</body>
+
+</html>
